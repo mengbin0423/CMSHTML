@@ -1,0 +1,18 @@
+$(function(){
+    $('.register').click(function(){
+        $.ajax({
+            url:'http://localhost:8080/register',
+            method:"post",
+            data:{
+                email:$('.email').val(),
+                username:$('.name').val(),
+                password:$('.number').val(),
+                confirmpassword:$('.confirm').val()
+            },
+            dataType:'json',
+            success:function(res){
+                console.log(res)
+            }
+        })
+    })
+})
