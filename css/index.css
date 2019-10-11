@@ -37,7 +37,7 @@ li{list-style: none;}
 .loginInput{
     width:100%;
     height:300px;
-    margin-top: 50px;
+    margin-top: 36px;
 }
 .loginInput input{
     display: block;
@@ -49,7 +49,7 @@ li{list-style: none;}
     padding-left: 10px; 
     outline: none;
 }
-.loginInput button{
+button{
     display:block;
     width:320px;
     height:40px;

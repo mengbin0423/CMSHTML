@@ -15,4 +15,18 @@ $(function(){
             }
         })
     })
+    $('.tologin').click(function(){
+        $.ajax({
+            url:'http://localhost:8080/loginIn',
+            method:'post',
+            data:{
+                username:$('.username').val(),
+                password:$('.password').val()
+            },
+            dataType:'json',
+            success:function(res){
+                console.log(res)
+            }
+        })
+    })
 })
