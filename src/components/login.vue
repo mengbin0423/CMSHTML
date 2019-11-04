@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'Register',
+  name: 'login',
   data () {
     // <!--验证手机号是否合法-->
     let checkTel = (rule, value, callback) => {
@@ -68,14 +68,15 @@ export default {
 
     // <!--提交注册-->
     submitForm (formName) {
+      var _this = this
       this.$refs[formName].validate(valid => {
         if (valid) {
-          this.$axios.post('http://localhost:8080/loginIn', {
+          this.$axios.post('http://localhost:3000/loginIn', {
             phone: this.ruleForm2.tel,
             password: this.ruleForm2.pass
           })
             .then(function (response) {
-              console.log(response)
+              _this.$router.push({ path: '/' })
             })
             .catch(function (error) {
               console.log(error)
@@ -86,11 +87,9 @@ export default {
         }
       })
     },
-    // <!--进入登录页-->
+    // <!--去注册-->
     gotoLogin () {
-      this.$router.push({
-        path: '/'
-      })
+      this.$router.push({name: 'register'})
     },
     // 验证邮箱
     checkEmail (str) {

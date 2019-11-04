@@ -117,7 +117,7 @@ export default {
             email: this.ruleForm2.email,
             phone: this.ruleForm2.tel,
             name: this.ruleForm2.name,
-            password: this.ruleForm2.pass,
+            password: this.$md5(this.ruleForm2.pass),
             confirm: this.ruleForm2.checkPass
           })
             .then(function (response) {
