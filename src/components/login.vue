@@ -88,8 +88,8 @@ export default {
       })
     },
     // <!--去注册-->
-    gotoLogin () {
-      this.$router.push({name: 'register'})
+    gotoLogin (str) {
+      this.$router.push({path: '/register'})
     },
     // 验证邮箱
     checkEmail (str) {
